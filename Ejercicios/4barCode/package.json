@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "inquirer": "^12.4.2",
+    "qr-image": "^3.2.0"
+  },
+  "name": "4barcode",
+  "version": "1.0.0",
+  "description": "generar imagen codigo qr de enlace github personal",
+  "main": "index.js",
+  "type": "module",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "AAGA",
+  "license": "ISC"
+}
