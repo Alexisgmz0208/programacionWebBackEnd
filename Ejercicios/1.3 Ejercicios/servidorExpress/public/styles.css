@@ -1,0 +1,22 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    text-align: center;
+    background: #129490;
+}
+ 
+h1{
+    margin-bottom: 10px;
+}
+
+a{
+    display: inline-block;
+    margin: 5px;
+    padding: 8px;
+    color: white;
+    background: #065143;
+    text-decoration: none;
+}
