@@ -1,0 +1,30 @@
+[
+    {
+        "id":"0001",
+        "tipo":"taco",
+        "nombre":"Taco lechon",
+        "precio":20.00,
+        "ingredientes":{
+            "proteina":{
+            "nombre":"Puerco",
+            "preparacion":"Horneado" 
+            },
+            "salsa":{
+                "nombre":"Tomate verde",
+                "picor":"Medio"
+            },
+            "acompañeamientos":[
+                {
+                    "nombre":"Cebolla",
+                    "cantidad":"1 Cucharada",
+                    "ingredientes":["Cebolla Blanca","Cilantro","Naranja","Sal"]
+                },
+                {
+                    "nombre":"Guacamole",
+                    "cantidad":"2 Cucharadas",
+                    "ingredientes":["Aguacate","Jugo de Limon","Sal","Cebolla","Cilantro"]
+                }
+            ]
+        }
+    }
+]
