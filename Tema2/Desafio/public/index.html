@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>AlumnoMateria</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+	<h1>Diseño Web Profesional</h1>
+	<form id="form" class="buttons">
+		<button type="button" data-type="Fundamentos de Diseño Web">Tema 1 Fundamentos de Diseño Web</button>
+		<button type="button" data-type="Diseño Web Responsivo">Tema 2 Diseño Web Responsivo</button>
+		<button type="button" data-type="Interactividad con JavaScript">Tema 3 Interactividad con JavaScript</button>
+		<button type="button" data-type="Optimización y SEO">Tema 4 Optimización y SEO</button>
+	</form>
+	<div id="Container"></div>
+  <script>
+      document.querySelectorAll("#form button").forEach(button => {
+      button.addEventListener("click", async (event) => {
+        const type = event.target.getAttribute("data-type").toLowerCase();
+        
+      
+        const response = await fetch(`/materia/${type}`);
+        const materia = await response.json();
+
+
+        const contenedor = document.getElementById("Container"); 
+        if (materia.error) {
+          contenedor.innerHTML = "<h2>Error al cargar la Materia</h2>"; //si no se recupera el contenido HTML de un elemento.
+        } else {
+          contenedor.innerHTML = `
+            <h2>Tema ${materia.ID} ${materia.Nombre}</h2> 
+            <h3>Información:</h3>
+            <ul id="datosMateria">
+              <li><b>Descripción:</b> ${materia.Descripción}</li>
+              <li><b>Palabras Clave:</b> ${materia["Palabras claves"].join(" ")}</li>
+              <h3>Practicas recomendadas:</h3>
+              ${materia.Prácticas.map(Prácticas => `<li> <ul> 
+                <li><b>Titulo:</b> ${Prácticas.Título}</li>
+                <li><b>Descripcion:</b> ${Prácticas.Descripción}</li><li><b>Objetivo:</b> ${Prácticas.Objetivo}</li></ul></li>`).join("")}</ul>`;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
